@@ -428,3 +428,225 @@ a.product-card-link {
 
 
 /*estilos del carrousel productos*/
+
+
+.product-carousel-section {
+    background-color: #111111;
+    padding: 4rem 0 5rem 0;
+    overflow-x: hidden;
+}
+
+.header-content .section-title {
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+.header-content .section-subtitle {
+    color: #ced4da;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+.header-content .brand-name {
+    background: linear-gradient(90deg, #932b34, #ff6b78);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:#932b34
+}
+
+.product-card {
+    background-color: #1d1d1d;
+    color: #f0f0f0;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 0.5rem;
+    text-align: center;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.3s cubic-bezier(0.8, 0, 0.5, 1);
+    transform: translateZ(0);
+}
+
+.badge-discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(135deg, #932b34, #c92a37);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.product-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.8, 0, 0.5, 1);
+}
+
+.product-card:hover .product-image-container img {
+    transform: scale(1.1);
+}
+
+.product-card:hover {
+    border-color: #730d0d;
+    z-index: 10;
+}
+
+.product-card h3 {
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.product-card p {
+    font-size: 0.9rem;
+    color: #888888;
+    margin-bottom: 1.25rem;
+}
+
+.btn-rojo {
+    background-color: #932b34;
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.btn-rojo:hover {
+    background-color: #c92a37;
+    color: #ffffff;
+    transform: scale(1.03);
+}
+
+.product-card .btn-rojo {
+    margin-top: auto;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.carousel-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carousel-control-external {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+.carousel-control-external svg {
+    stroke: #932b34;
+    transition: stroke 0.3s ease;
+}
+
+.carousel-control-external:hover {
+    background-color: #932b34;
+    opacity: 1;
+    border-color: #932b34;
+}
+.carousel-control-external:hover svg {
+    stroke: #ffffff;
+}
+.prev-btn { margin-right: 1.5rem; }
+.next-btn { margin-left: 1.5rem; }
+
+#carouselinfinitytech .carousel-indicators {
+    bottom: -60px;
+}
+#carouselinfinitytech .carousel-indicators button {
+    background-color: #444;
+    opacity: 0.7;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 0;
+    margin: 0 5px;
+    transition: all 0.4s cubic-bezier(0.8, 0, 0.5, 1);
+}
+#carouselinfinitytech .carousel-indicators .active {
+    opacity: 1;
+    width: 35px;
+    border-radius: 5px;
+    background-color: #932b34;
+}
+
+#carouselinfinitytech .carousel-item {
+    transition: transform 0.8s cubic-bezier(0.8, 0, 0.5, 1);
+}
+
+#carouselinfinitytech.carousel {
+    overflow: visible;
+}
+
+#carouselinfinitytech .carousel-control-prev,
+#carouselinfinitytech .carousel-control-next {
+    display: none;
+}
+
+#carouselinfinitytech .carousel-control-prev-icon,
+#carouselinfinitytech .carousel-control-next-icon {
+    background-color: rgba(220, 53, 69, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+#carouselinfinitytech .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+#carouselinfinitytech .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 768px) {
+    .carousel-control-external {
+        display: none;
+    }
+    .carousel-wrapper {
+        width: 100%;
+    }
+    .carousel-container {
+        padding: 0;
+    }
+    #carouselinfinitytech .carousel-indicators {
+        bottom: -45px;
+    }
+    .product-card {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+}
