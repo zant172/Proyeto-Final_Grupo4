@@ -1,0 +1,209 @@
+:root {
+    --color-fondo-nav: #000000;
+    --color-acento: #932b34;
+    --color-texto-principal: #ffffff;
+    --color-resaltado-fondo: #ffffff;
+    --color-resaltado-texto: #000000;
+    --color-secundario: var(--color-acento);
+    --font-moderna: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-moderna);
+    padding-top: 70px;
+}
+#carrusel-presentacion {
+    padding: 0;
+    background-color: var(--color-fondo-nav);
+    border-bottom: 5px solid var(--color-acento);
+}
+
+.carousel-item {
+    height: 60vh;
+    min-height: 450px;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.carousel-inner .carousel-item:not(.active) .carousel-overlay {
+    display: none;
+}
+
+.custom-slide-content .carousel-caption {
+    left: 0;
+    max-width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    width: 100%;
+    padding: 0 3%;
+}
+
+.company-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-resaltado-fondo);
+    text-shadow:
+        0 0 1px #fff,
+        0 0 10px var(--color-acento),
+        0 0 20px var(--color-acento),
+        0 0 40px var(--color-acento);
+    margin-bottom: 10px;
+}
+
+.company-description {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-texto-principal);
+    line-height: 1.3;
+}
+
+.custom-btn {
+    border-radius: 50px;
+    font-weight: 800;
+    padding: 12px 30px;
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(147, 43, 52, 0.7);
+}
+
+.custom-btn:hover {
+    background-color: var(--color-resaltado-fondo) !important;
+    border-color: var(--color-acento) !important;
+    color: var(--color-acento) !important;
+    box-shadow: 0 0 25px var(--color-acento);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    filter: drop-shadow(0 0 10px var(--color-acento));
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    border: 2px solid var(--color-acento);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.carousel-control-prev-icon::before {
+    content: "\F284";
+    font-family: 'bootstrap-icons';
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel-control-next-icon::before {
+    content: "\F285";
+    font-family: 'bootstrap-icons';
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--color-acento);
+}
+
+.carousel-control-prev-icon:hover::before,
+.carousel-control-next-icon:hover::before {
+    color: var(--color-resaltado-fondo);
+}
+
+@media (min-width: 1200px) {
+    .carousel-item {
+        height: 40vh;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-item {
+        height: 50vh !important;
+        min-height: 350px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 45vh !important;
+        min-height: 300px !important;
+    }
+
+    .custom-slide-content .carousel-caption {
+        padding: 0 5%;
+    }
+
+    .company-title {
+        font-size: 2.5rem;
+    }
+
+    .company-description {
+        font-size: 1.0rem;
+    }
+
+    .custom-btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        height: 40vh !important;
+        min-height: 250px !important;
+    }
+
+    .custom-slide-content .carousel-caption {
+        padding: 0 3%;
+    }
+
+    .company-title {
+        font-size: 1.8rem;
+    }
+
+    .company-description {
+        font-size: 0.75rem;
+    }
+
+    .custom-btn {
+        font-size: 0.7rem;
+    }
+}
