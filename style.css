@@ -1,4 +1,4 @@
-/*estilos genereales*/ 
+/*estilos genereales-----------------------------------------------------------------------------------------------------------------------*/ 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     padding-top: 70px;
 }
 
-/*#estilos de la barra de navegación*/
+/*#estilos de la barra de navegación-----------------------------------------------------------------------------------------------------------------------*/
 
 header {
     background-color: #000000;
@@ -121,7 +121,7 @@ header img {
     }
 }
 
-/*estilos del carrousel*/
+/*estilos del carrousel-----------------------------------------------------------------------------------------------------------------------*/
 
 #carrusel-presentacion {
     padding: 0;
@@ -312,3 +312,119 @@ header img {
         font-size: 0.7rem;
     }
 }
+
+/*estilo de cards-----------------------------------------------------------------------------------------------------------------------*/
+
+.products-section-simple {
+    background-color: #111111;
+    color: #e8e8e8;
+    padding: 5rem 0;
+}
+
+.section-title-simple {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+    margin-bottom: 3rem;
+    color: #e8e8e8;
+}
+
+.products-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.product-item-simple {
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.product-item-simple:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.product-image-wrapper-simple {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-simple {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.25s ease-out;
+}
+
+.product-item-simple:hover .product-image-simple {
+    transform: scale(1.04);
+}
+
+.product-label-simple {
+    padding: 1.2rem 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #932b34;
+    transition: background-color 0.3s ease;
+}
+
+.product-item-simple:hover .product-label-simple {
+    background-color: #b03a45;
+}
+
+@media (min-width: 768px) {
+    .products-grid-simple {
+         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+         gap: 1.8rem;
+    }
+     .product-label-simple {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .products-grid-simple {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid-simple {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    .product-label-simple {
+        font-size: 0.8rem;
+        padding: 0.8rem 0.5rem;
+    }
+    .section-title-simple {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+a.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*estilos del carrousel productos*/
