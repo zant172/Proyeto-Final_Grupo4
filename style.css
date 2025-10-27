@@ -1,266 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
-    --color-fondo-nav: #000000;
-    --color-acento: #932b34;
-    --color-texto-principal: #ffffff;
-    --color-resaltado-fondo: #ffffff;
-    --color-resaltado-texto: #000000;
-    --color-secundario: var(--color-acento);
-    --font-moderna: 'Poppins', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: var(--font-moderna);
-    padding-top: 70px;
-}
 #carrusel-presentacion {
     padding: 0;
-    background-color: var(--color-fondo-nav);
-    border-bottom: 5px solid var(--color-acento);
+    background-color: #000000;
+    border-bottom: 5px solid #932b34;
 }
 
 .carousel-item {
@@ -299,19 +40,19 @@ body {
 .company-title {
     font-size: 4rem;
     font-weight: 900;
-    color: var(--color-resaltado-fondo);
+    color: #ffffff;
     text-shadow:
         0 0 1px #fff,
-        0 0 10px var(--color-acento),
-        0 0 20px var(--color-acento),
-        0 0 40px var(--color-acento);
+        0 0 10px #932b34,
+        0 0 20px #932b34,
+        0 0 40px #932b34;
     margin-bottom: 10px;
 }
 
 .company-description {
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--color-texto-principal);
+    color: #ffffff;
     line-height: 1.3;
 }
 
@@ -319,17 +60,17 @@ body {
     border-radius: 50px;
     font-weight: 800;
     padding: 12px 30px;
-    background-color: var(--color-acento);
-    border-color: var(--color-acento);
+    background-color: #932b34;
+    border-color: #932b34;
     transition: all 0.3s;
     box-shadow: 0 0 15px rgba(147, 43, 52, 0.7);
 }
 
 .custom-btn:hover {
-    background-color: var(--color-resaltado-fondo) !important;
-    border-color: var(--color-acento) !important;
-    color: var(--color-acento) !important;
-    box-shadow: 0 0 25px var(--color-acento);
+    background-color: #ffffff !important;
+    border-color: #932b34 !important;
+    color: #932b34 !important;
+    box-shadow: 0 0 25px #932b34;
 }
 
 .carousel-control-prev,
@@ -340,7 +81,7 @@ body {
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    filter: drop-shadow(0 0 10px var(--color-acento));
+    filter: drop-shadow(0 0 10px #932b34);
 }
 
 .carousel-control-prev-icon,
@@ -349,7 +90,7 @@ body {
     width: 2rem;
     height: 2rem;
     position: relative;
-    border: 2px solid var(--color-acento);
+    border: 2px solid #932b34;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
@@ -359,7 +100,7 @@ body {
     content: "\F284";
     font-family: 'bootstrap-icons';
     font-size: 1.5rem;
-    color: var(--color-acento);
+    color: #932b34;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -370,7 +111,7 @@ body {
     content: "\F285";
     font-family: 'bootstrap-icons';
     font-size: 1.5rem;
-    color: var(--color-acento);
+    color: #932b34;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -379,12 +120,12 @@ body {
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: var(--color-acento);
+    background-color: #932b34;
 }
 
 .carousel-control-prev-icon:hover::before,
 .carousel-control-next-icon:hover::before {
-    color: var(--color-resaltado-fondo);
+    color: #ffffff;
 }
 
 @media (min-width: 1200px) {
