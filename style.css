@@ -652,4 +652,57 @@ a.product-card-link {
 }
 
 /*formulario y footer estilos-----------------------------------------------------------------------------------------------------------------------*/
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
+.custom-font {
+    font-weight: 700;
+}
+
+.form-control {
+    background-color: white !important;
+    border: 2px solid #932b34 !important; 
+    color: #000000; 
+}
+
+.form-control:focus {
+    border-color: #6e2027 !important; 
+    box-shadow: 0 0 0 0.25rem rgba(147, 43, 52, 0.5) !important; 
+}
+
+.custom-btn {
+    background-color: #932b34 !important;
+    color: white !important;
+    border: none;
+    border-radius: 0.5rem; 
+    padding: 0.8rem 1.5rem; 
+    transition: background-color 0.3s ease; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-btn:hover,
+.custom-btn:focus {
+    background-color: #6e2027 !important; 
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.custom-social-icon {
+    color: #932b34; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-social-icon:hover {
+    color: white; 
+    transform: translateY(-3px); 
+}
