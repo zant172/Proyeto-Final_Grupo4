@@ -1,0 +1,129 @@
+:root {
+    --color-fondo-nav: #000000;
+    --color-acento: #932b34;
+    --color-texto-principal: #ffffff;
+    --color-resaltado-fondo: #ffffff;
+    --color-resaltado-texto: #000000;
+    --color-secundario: var(--color-acento);
+    --font-moderna: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-moderna);
+    padding-top: 70px;
+}
+
+header {
+    background-color: var(--color-fondo-nav);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2%;
+    width: 100%;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu-toggle {
+    display: none !important;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    font-family: var(--font-moderna);
+    text-decoration: none;
+    color: var(--color-texto-principal);
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus {
+    background-color: transparent !important;
+    color: var(--color-acento) !important;
+    box-shadow: 0 0 10px var(--color-acento), 0 0 15px rgba(147, 43, 52, 0.5);
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+
+    header {
+        padding: 10px 1.5%;
+    }
+
+    .nav-menu ul {
+        gap: 15px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px 0.5%;
+    }
+
+    .nav-menu ul {
+        gap: 8px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 0.85rem;
+        padding: 6px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px 0.1%;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    .nav-menu ul {
+        gap: 2px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 0.65rem;
+        padding: 3px 2px;
+    }
+}
