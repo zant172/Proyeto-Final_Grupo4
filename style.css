@@ -1,4 +1,4 @@
-#estilos genereales 
+/*estilos genereales*/ 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     padding-top: 70px;
 }
 
-#estilos de la barra de navegación
+/*#estilos de la barra de navegación*/
 
 header {
     background-color: #000000;
@@ -121,7 +121,7 @@ header img {
     }
 }
 
-#estilos del carrousel
+/*estilos del carrousel*/
 
 #carrusel-presentacion {
     padding: 0;
