@@ -707,3 +707,54 @@ body {
     color: white; 
     transform: translateY(-3px); 
 }
+
+/* --- Estilos para la Sección de Ubicación con Google Maps --- */
+
+#ubicacion {
+    
+    background-color: rgba(255, 255, 255, 0.068); 
+    padding: 5rem 0; 
+}
+
+
+.text-shadow-light {
+   
+    text-shadow:
+        0 0 1px #fff,
+        0 0 5px #700202,
+        0 0 10px #720303,
+        0 0 15px rgba(121, 3, 3, 0.5); 
+    color: #ffffff !important; 
+    
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+.map-container {
+    
+    
+    
+    border: 2px solid hsl(0, 95%, 25%); 
+    border-radius: 12px;
+    overflow: hidden; 
+    
+    
+    box-shadow: 0 0 10px rgba(105, 1, 1, 0.822), 0 0 20px rgba(147, 43, 52, 0.3);
+    
+    height: 400px; 
+}
+
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 300px; 
+        border-width: 2px;
+    }
+}
