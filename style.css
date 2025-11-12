@@ -706,6 +706,7 @@ a.product-card-link {
         width: 100%;
     }
 
+    
     .carousel-container {
         padding: 0;
     }
@@ -713,6 +714,7 @@ a.product-card-link {
     #carouselinfinitytech .carousel-indicators {
         bottom: -45px;
     }
+
 
     .product-card {
         padding: 1rem;
