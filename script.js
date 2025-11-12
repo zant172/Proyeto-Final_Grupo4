@@ -57,12 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-   
 
     // --- FUNCIONALIDAD 4: GESTIÓN DEL ENLACE EXTERNO DEL CARRUSEL (Navegación Externa) ---
     
-    
-    
+
     const landingButton = document.getElementById('btn-info-landing');
     const targetUrl = "https://infoinfinitytechh.netlify.app/";
 
