@@ -36,11 +36,11 @@
 
     <nav class="nav-menu" id="nav-menu">
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#descuentos">Descuentos</a></li>
-        <li><a href="#ubicacion">Ubi</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a data-target="inicio">Inicio</a></li>
+        <li><a data-target="productos">Productos</a></li>
+        <li><a data-target="descuentos">Descuentos</a></li>
+        <li><a data-target="ubicacion">Ubi</a></li>
+        <li><a data-target="contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -59,7 +59,7 @@
               Somos tu socio tecnológico para armar la PC ideal. Ofrecemos componentes de alta calidad y asesoramiento
               personalizado para garantizar la máxima compatibilidad y rendimiento.
             </p>
-            <a href="#contacto" class="btn btn-light mt-3 custom-btn">¡Contactanos hoy!</a>
+            <a id="btn-info-landing" target="_blank" class="btn btn-light mt-3 custom-btn">¡Más info de InfinityTech!</a>
           </div>
         </div>
 
@@ -452,6 +452,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
