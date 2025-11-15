@@ -452,7 +452,7 @@ a.product-card-link {
     border-radius: 15px;
     padding: 0.5rem;
     text-align: center;
-    height: 80%;
+    height: 68%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -471,6 +471,71 @@ a.product-card-link {
     padding: 0.3rem 0.6rem;
     border-radius: 8px;
     z-index: 2;
+}
+
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.badge-popular {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #000;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.badge-bestseller {
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.4);
+}
+
+.badge-lastchance {
+    position: absolute;
+    top: 3.5rem;
+    left: 1rem;
+    background: linear-gradient(135deg, #9c27b0, #e91e63);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    z-index: 2;
+    animation: pulse 2s infinite;
+    box-shadow: 0 2px 10px rgba(233, 30, 99, 0.5);
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.price-original {
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: line-through;
+}
+
+.price-discount {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #c92a37;
+}
+
+.price-save {
+    font-size: 0.75rem;
+    color: #4caf50;
+    font-weight: 600;
 }
 
 .product-image-container {
@@ -793,6 +858,18 @@ body {
         transform: translateY(0);
     }
 }
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(233, 30, 99, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(233, 30, 99, 0.8);
+    }
+}
+
 .product-card-link {
     transition: transform 0.3s ease;
     display: block;
@@ -989,6 +1066,29 @@ body {
         min-width: 200px;
         font-size: 14px;
     }
+    
+    .product-badge {
+        font-size: 0.55rem;
+        padding: 0.25rem 0.4rem;
+    }
+    
+    .badge-lastchance {
+        font-size: 0.55rem;
+        padding: 0.25rem 0.4rem;
+        top: 3rem;
+    }
+    
+    .price-discount {
+        font-size: 1.2rem;
+    }
+    
+    .price-original {
+        font-size: 0.75rem;
+    }
+    
+    .price-save {
+        font-size: 0.65rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -998,5 +1098,38 @@ body {
     
     .timer-display {
         gap: 10px;
+    }
+    
+    .product-badge {
+        font-size: 0.5rem;
+        padding: 0.2rem 0.3rem;
+        top: 0.8rem;
+        right: 0.8rem;
+    }
+    
+    .badge-discount {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+    
+    .badge-lastchance {
+        font-size: 0.5rem;
+        padding: 0.2rem 0.3rem;
+        top: 2.7rem;
+        left: 0.8rem;
+    }
+    
+    .price-discount {
+        font-size: 1rem;
+    }
+    
+    .price-original {
+        font-size: 0.7rem;
+    }
+    
+    .price-save {
+        font-size: 0.6rem;
     }
 }
