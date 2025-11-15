@@ -85,89 +85,104 @@
 
   <section id="productos" class="products-section-simple bg-black text-white py-5">
     <div class="container">
+      
+      <div class="text-center mb-4">
+        <h2 class="section-title mb-3">NUESTROS PRODUCTOS</h2>
+        <div class="filter-buttons mb-4" id="filterButtons">
+          <button class="filter-btn active" data-filter="all">TODOS</button>
+          <button class="filter-btn" data-filter="componentes">COMPONENTES</button>
+          <button class="filter-btn" data-filter="perifericos">PERIFÉRICOS</button>
+          <button class="filter-btn" data-filter="visuales">VISUALES</button>
+        </div>
+      </div>
 
-      <div class="products-grid-simple">
+      <div class="products-grid-simple" id="productsGrid">
 
-        <a href="https://compragamer.com/productos?cate=19" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=19">
           <div class="product-item-simple">
+            <span class="product-badge badge-popular">⭐ POPULAR</span>
             <div class="product-image-wrapper-simple">
               <img src="img/almacenamiento.jpg" alt="SSD" class="product-image-simple">
             </div>
             <div class="product-label-simple">ALMACENAMIENTO</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=6" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=6">
           <div class="product-item-simple">
+            <span class="product-badge badge-bestseller">🔥 MÁS VENDIDO</span>
             <div class="product-image-wrapper-simple">
               <img src="img/placaDeVideo.jpg" alt="Placa de Video" class="product-image-simple">
             </div>
             <div class="product-label-simple">PLACA DE VIDEO</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=49" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=49">
           <div class="product-item-simple">
             <div class="product-image-wrapper-simple">
               <img src="img/mother.jpg" alt="Mother" class="product-image-simple">
             </div>
             <div class="product-label-simple">MOTHER</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=15" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=15">
           <div class="product-item-simple">
+            <span class="product-badge badge-popular">⭐ POPULAR</span>
             <div class="product-image-wrapper-simple">
               <img src="img/memoriaRam.jpg" alt="Memoria RAM" class="product-image-simple">
             </div>
             <div class="product-label-simple">MEMORIA RAM</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=34" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=34">
           <div class="product-item-simple">
             <div class="product-image-wrapper-simple">
               <img src="img/fuente.jpg" alt="Fuente de poder" class="product-image-simple">
             </div>
             <div class="product-label-simple">FUENTE</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=48" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=48">
           <div class="product-item-simple">
+            <span class="product-badge badge-bestseller">🔥 MÁS VENDIDO</span>
             <div class="product-image-wrapper-simple">
               <img src="img/procesador.jpg" alt="Procesador" class="product-image-simple">
             </div>
             <div class="product-label-simple">PROCESADOR</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=5" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="visuales" data-url="https://compragamer.com/productos?cate=5">
           <div class="product-item-simple">
             <div class="product-image-wrapper-simple">
               <img src="img/monitor.jpg" alt="Monitor" class="product-image-simple">
             </div>
             <div class="product-label-simple">MONITOR</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=7" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="componentes" data-url="https://compragamer.com/productos?cate=7">
           <div class="product-item-simple">
             <div class="product-image-wrapper-simple">
               <img src="img/gabinete.jpg" alt="Gabinete" class="product-image-simple">
             </div>
             <div class="product-label-simple">GABINETE</div>
           </div>
-        </a>
+        </div>
 
-        <a href="https://compragamer.com/productos?cate=39" target="_blank" class="product-card-link">
+        <div class="product-card-link" data-category="perifericos" data-url="https://compragamer.com/productos?cate=39">
           <div class="product-item-simple">
+            <span class="product-badge badge-popular">⭐ POPULAR</span>
             <div class="product-image-wrapper-simple">
               <img src="img/auriculares.jpg" alt="Perifericos" class="product-image-simple">
             </div>
             <div class="product-label-simple">PERIFERICOS</div>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
@@ -179,6 +194,29 @@
       <div class="header-content text-center mb-5">
         <h2 class="section-title">Algunos descuentos que ofrece <span class="brand-name">InfinityTech</span></h2>
         <p class="section-subtitle">Para más info, revisa nuestros productos destacados.</p>
+        
+        <!-- Temporizador de Oferta -->
+        <div class="offer-timer mt-4">
+          <div class="timer-title">🔥 ¡Oferta termina en!</div>
+          <div class="timer-display" id="offerTimer">
+            <div class="timer-unit">
+              <span class="timer-number" id="days">00</span>
+              <span class="timer-label">Días</span>
+            </div>
+            <div class="timer-unit">
+              <span class="timer-number" id="hours">00</span>
+              <span class="timer-label">Horas</span>
+            </div>
+            <div class="timer-unit">
+              <span class="timer-number" id="minutes">00</span>
+              <span class="timer-label">Min</span>
+            </div>
+            <div class="timer-unit">
+              <span class="timer-number" id="seconds">00</span>
+              <span class="timer-label">Seg</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="carousel-container">
@@ -207,43 +245,73 @@
               <div class="carousel-item active">
                 <div class="row g-4 justify-content-center align-items-stretch">
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod1" data-url="https://compragamer.com/producto/Disco_Solido_SSD_M_2_Team_1TB_MP33_PRO_3400MB_s_NVMe_PCI_E_Gen3_x4_13271?cate=81&marca=99">
+                      <button class="favorite-btn" data-product-id="prod1">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-15%</div>
                       <div class="product-image-container"><img src="img/almacenamiento.jpg" alt="SSD"></div>
                       <h3>Nvm M.2 TEAMGroup 1tb</h3>
                       <p>La mas alta velocidad</p>
-                      <a href="https://compragamer.com/producto/Disco_Solido_SSD_M_2_Team_1TB_MP33_PRO_3400MB_s_NVMe_PCI_E_Gen3_x4_13271?cate=81&marca=99"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$89.000</span>
+                        <span class="price-discount">$75.650</span>
+                        <span class="price-save">Ahorrás $13.350</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod2" data-url="https://compragamer.com/producto/Placa_de_Video_INNO3D_GeForce_RTX_5070_12GB_GDDR7_X3_OC_17373?cate=6">
+                      <button class="favorite-btn" data-product-id="prod2">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-20%</div>
+                      <span class="badge-lastchance">⚡ ÚLTIMA OPORTUNIDAD</span>
                       <div class="product-image-container"><img src="img/placaDeVideo.jpg" alt="Placa de Video"></div>
                       <h3>Nvidia RTX 5070 OC 12gb</h3>
                       <p>Potencia Maxima</p>
-                      <a href="https://compragamer.com/producto/Placa_de_Video_INNO3D_GeForce_RTX_5070_12GB_GDDR7_X3_OC_17373?cate=6"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$950.000</span>
+                        <span class="price-discount">$760.000</span>
+                        <span class="price-save">Ahorrás $190.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod3" data-url="https://compragamer.com/producto/Mother_ASUS_PRIME_B550M_K_AM4_10585?cate=26">
+                      <button class="favorite-btn" data-product-id="prod3">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-10%</div>
                       <div class="product-image-container"><img src="img/mother.jpg" alt="Mother"></div>
                       <h3>Motherboard ASUS PRIME B550M-K</h3>
                       <p>Última generación.</p>
-                      <a href="https://compragamer.com/producto/Mother_ASUS_PRIME_B550M_K_AM4_10585?cate=26"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$145.000</span>
+                        <span class="price-discount">$130.500</span>
+                        <span class="price-save">Ahorrás $14.500</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod4" data-url="https://compragamer.com/producto/Memoria_Corsair_DDR5_32GB_2x16GB_6400MHz_Dominator_Titanium_RGB_CL32_Intel_XMP3_0_ICUE_17771?cate=15">
+                      <button class="favorite-btn" data-product-id="prod4">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-22%</div>
+                      <span class="badge-lastchance">⚡ ÚLTIMA OPORTUNIDAD</span>
                       <div class="product-image-container"><img src="img/memoriaRam.jpg" alt="Memoria RAM"></div>
                       <h3>Memoria RAM DOMINATOR TITANIUM</h3>
                       <p>Velocidad para tu PC.</p>
-                      <a href="https://compragamer.com/producto/Memoria_Corsair_DDR5_32GB_2x16GB_6400MHz_Dominator_Titanium_RGB_CL32_Intel_XMP3_0_ICUE_17771?cate=15"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$220.000</span>
+                        <span class="price-discount">$171.600</span>
+                        <span class="price-save">Ahorrás $48.400</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                 </div>
@@ -252,43 +320,72 @@
               <div class="carousel-item">
                 <div class="row g-4 justify-content-center align-items-stretch">
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod5" data-url="https://compragamer.com/producto/Fuente_ADATA_XPG_1000W_80_Plus_Gold_Full_Modular_ATX_3_1_PCIe_5_1_CORE_REACTOR_II_18502?cate=34&marca=92">
+                      <button class="favorite-btn" data-product-id="prod5">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-15%</div>
                       <div class="product-image-container"><img src="img/fuente.jpg" alt="Fuente de poder"></div>
                       <h3>Fuente de Poder XPG 1000W</h3>
                       <p>Energía estable.</p>
-                      <a href="https://compragamer.com/producto/Fuente_ADATA_XPG_1000W_80_Plus_Gold_Full_Modular_ATX_3_1_PCIe_5_1_CORE_REACTOR_II_18502?cate=34&marca=92"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$180.000</span>
+                        <span class="price-discount">$153.000</span>
+                        <span class="price-save">Ahorrás $27.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod6" data-url="https://compragamer.com/producto/Procesador_Intel_Pentium_G4560_Chipset_H110_B150_B250_H170_Z170_LGA1151_KABY_LAKE_OEM_8451?cate=48">
+                      <button class="favorite-btn" data-product-id="prod6">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-20%</div>
                       <div class="product-image-container"><img src="img/procesador.jpg" alt="Procesador"></div>
                       <h3>Procesador Intel Pentium G4560</h3>
                       <p>Calidad Precio</p>
-                      <a href="https://compragamer.com/producto/Procesador_Intel_Pentium_G4560_Chipset_H110_B150_B250_H170_Z170_LGA1151_KABY_LAKE_OEM_8451?cate=48"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$95.000</span>
+                        <span class="price-discount">$76.000</span>
+                        <span class="price-save">Ahorrás $19.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod7" data-url="https://compragamer.com/producto/Monitor_Gamer_LG_UltraGear_27GS60F_B_27_FHD_IPS_180Hz_G_Sync_Freesync_16549?cate=5">
+                      <button class="favorite-btn" data-product-id="prod7">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-10%</div>
                       <div class="product-image-container"><img src="img/monitor.jpg" alt="Monitor"></div>
                       <h3>Monitor LG UltraGear 24" 180hz</h3>
                       <p>Calidad de imagen.</p>
-                      <a href="https://compragamer.com/producto/Monitor_Gamer_LG_UltraGear_27GS60F_B_27_FHD_IPS_180Hz_G_Sync_Freesync_16549?cate=5"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$350.000</span>
+                        <span class="price-discount">$315.000</span>
+                        <span class="price-save">Ahorrás $35.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod8" data-url="https://compragamer.com/producto/Teclado_Hipermagn_tico_Steel_Series_Apex_PRO_TKL_3_Wireless_2_4Ghz_Bluetooth_Black_RGB_Omnipoint_3_0_Hall_Effect_17432?cate=39">
+                      <button class="favorite-btn" data-product-id="prod8">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-30%</div>
+                      <span class="badge-lastchance">⚡ ÚLTIMA OPORTUNIDAD</span>
                       <div class="product-image-container"><img src="img/teclado.jpg" alt="Teclado"></div>
                       <h3>Teclado SteelSeries Apex Pro HyperMagnetic</h3>
                       <p>Magnetico Gaming Keyboard</p>
-                      <a href="https://compragamer.com/producto/Teclado_Hipermagn_tico_Steel_Series_Apex_PRO_TKL_3_Wireless_2_4Ghz_Bluetooth_Black_RGB_Omnipoint_3_0_Hall_Effect_17432?cate=39"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$420.000</span>
+                        <span class="price-discount">$294.000</span>
+                        <span class="price-save">Ahorrás $126.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                 </div>
@@ -297,43 +394,72 @@
               <div class="carousel-item">
                 <div class="row g-4 justify-content-center align-items-stretch">
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod9" data-url="https://compragamer.com/producto/Mouse_Logitech_G305_Wireless_2_4Ghz_Lightspeed_Hero_Black_99g_250Hs_7738?cate=2">
+                      <button class="favorite-btn" data-product-id="prod9">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-25%</div>
+                      <span class="badge-lastchance">⚡ ÚLTIMA OPORTUNIDAD</span>
                       <div class="product-image-container"><img src="img/mouse.jpg" alt="Mouse"></div>
                       <h3>Mouse Logitech 305</h3>
                       <p>Precisión y comodidad.</p>
-                      <a href="https://compragamer.com/producto/Mouse_Logitech_G305_Wireless_2_4Ghz_Lightspeed_Hero_Black_99g_250Hs_7738?cate=2"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$68.000</span>
+                        <span class="price-discount">$51.000</span>
+                        <span class="price-save">Ahorrás $17.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod10" data-url="https://compragamer.com/producto/Disco_S_lido_SSD_Kingston_960GB_A400_500MB_s_7894?cate=81&marca=10">
+                      <button class="favorite-btn" data-product-id="prod10">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-15%</div>
                       <div class="product-image-container"><img src="img/discoDuro.jpg" alt="Disco Duro"></div>
                       <h3>Disco SSD Kingston 1tb</h3>
                       <p>Actualiza tu almacenamiento y dale mas velocidad a tu pc</p>
-                      <a href="https://compragamer.com/producto/Disco_S_lido_SSD_Kingston_960GB_A400_500MB_s_7894?cate=81&marca=10"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$105.000</span>
+                        <span class="price-discount">$89.250</span>
+                        <span class="price-save">Ahorrás $15.750</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod11" data-url="https://compragamer.com/producto/Gabinete_Cougar_MX410_Mesh_G_RGB_4x120mm_ARGB_Fans_10821?cate=7">
+                      <button class="favorite-btn" data-product-id="prod11">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-12%</div>
                       <div class="product-image-container"><img src="img/gabinete.jpg" alt="Gabinete"></div>
                       <h3>Gabinete Cougar MX410 Mesh-G RGB</h3>
                       <p>Diseño y refrigeración.</p>
-                      <a href="https://compragamer.com/producto/Gabinete_Cougar_MX410_Mesh_G_RGB_4x120mm_ARGB_Fans_10821?cate=7"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$125.000</span>
+                        <span class="price-discount">$110.000</span>
+                        <span class="price-save">Ahorrás $15.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                   <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="prod12" data-url="https://compragamer.com/producto/Auriculares_Corsair_Virtuoso_PRO_Carbon_PC_PS4_PS5_XBOX_16372?cate=8&filtros=696:Negro">
+                      <button class="favorite-btn" data-product-id="prod12">
+                        <i class="bi bi-heart"></i>
+                      </button>
                       <div class="badge-discount">-20%</div>
                       <div class="product-image-container"><img src="img/auriculares.jpg" alt="Auriculares"></div>
                       <h3>Auriculares Genius 7.1 Sonido</h3>
                       <p>Sonido inmersivo 7.1.</p>
-                      <a href="https://compragamer.com/producto/Auriculares_Corsair_Virtuoso_PRO_Carbon_PC_PS4_PS5_XBOX_16372?cate=8&filtros=696:Negro"
-                        target="_blank" class="btn btn-rojo">Ver Más</a>
+                      <div class="price-container">
+                        <span class="price-original">$85.000</span>
+                        <span class="price-discount">$68.000</span>
+                        <span class="price-save">Ahorrás $17.000</span>
+                      </div>
+                      <button class="btn btn-rojo product-btn">Ver Más</button>
                     </div>
                   </div>
                 </div>
