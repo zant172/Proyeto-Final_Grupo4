@@ -711,60 +711,129 @@ a.product-card-link {
     }
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+ @keyframes jump {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
 }
 
-.custom-font {
-    font-weight: 700;
+@keyframes neon-glow {
+    0%, 100% { text-shadow: 0 0 1px #fff, 0 0 5px #932b34, 0 0 10px #932b34; }
+    50% { text-shadow: 0 0 2px #fff, 0 0 15px #932b34, 0 0 20px #932b34; }
 }
 
-.form-control {
+@keyframes soft-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.shining-animation {
+    animation: neon-glow 3s infinite alternate ease-in-out, 
+               jump 4s infinite 1s;
+    display: block !important;
+    margin: 0 auto;
+    width: fit-content;
+    font-weight: 900 !important;
+}
+
+#contacto h2 {
+    color: #ffffff !important;
+}
+
+#contacto .form-control {
     background-color: white !important;
-    border: 2px solid #932b34 !important; 
-    color: #000000; 
+    border: 2px solid #932b34 !important;
+    color: #000000 !important;
 }
 
-.form-control:focus {
-    border-color: #6e2027 !important; 
-    box-shadow: 0 0 0 0.25rem rgba(147, 43, 52, 0.5) !important; 
+#contacto .form-control:focus {
+    border-color: #6e2027 !important;
+    box-shadow: 0 0 0 0.25rem rgba(147, 43, 52, 0.5) !important;
 }
 
-.custom-btn {
+.contact-btn {
     background-color: #932b34 !important;
     color: white !important;
-    border: none;
-    border-radius: 0.5rem; 
-    padding: 0.8rem 1.5rem; 
-    transition: background-color 0.3s ease; 
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    padding: 0.6rem 1.2rem !important;
+    transition: background-color 0.3s ease !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }
 
-.custom-btn:hover,
-.custom-btn:focus {
-    background-color: #6e2027 !important; 
+.contact-btn:hover,
+.contact-btn:focus {
+    background-color: #6e2027 !important;
     color: white !important;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
 }
 
 .custom-social-icon {
-    color: #932b34; 
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #932b34 !important;
+    transition: color 0.3s ease, transform 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.custom-social-icon i {
+    transition: transform 0.3s ease !important;
+    animation: soft-pulse 3s infinite ease-in-out !important;
+    display: block !important;
 }
 
 .custom-social-icon:hover {
-    color: white; 
-    transform: translateY(-3px); 
+    transform: translateY(-3px) scale(1.1) !important;
+    animation: none !important;
+    color: white !important;
 }
+
+#whatsapp-float {
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    z-index: 999 !important;
+    color: #25d366 !important;
+    transition: transform 0.3s ease, color 0.3s ease !important;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)) !important;
+    cursor: pointer !important;
+}
+
+#whatsapp-float:hover {
+    transform: scale(1.1) !important;
+    color: #1faf58 !important;
+}
+
+@media (min-width: 768px) {
+    .contact-btn {
+        padding: 0.8rem 1.5rem !important;
+    }
+
+    .social-icons {
+        gap: 2rem !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .social-icons {
+        gap: 3rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #whatsapp-float i {
+        font-size: 2.5em !important;
+    }
+}
+
 #ubicacion {
     background-color: rgba(255, 255, 255, 0.068); 
     padding: 5rem 0; 
