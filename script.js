@@ -272,3 +272,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+document.addEventListener('DOMContentLoaded', () => {
+
+    const tituloContacto = document.getElementById('titulo-contacto');
+    const socialIcons = document.querySelectorAll('.custom-social-icon');
+    const whatsappButton = document.getElementById('whatsapp-float');
+    const form = document.getElementById('contactForm');
+    const submitButton = document.querySelector('.contact-btn');
+    
+    if (tituloContacto) {
+        tituloContacto.classList.add('shining-animation');
+    }
+
+    const handleRedirect = function () {
+        const url = this.getAttribute('data-url');
+        if (url) {
+            window.open(url, '_blank');
+        }
+    };
+
+    socialIcons.forEach(icon => {
+        icon.addEventListener('click', handleRedirect);
+        icon.style.cursor = 'pointer';
+    });
+
+    if (whatsappButton) {
+        whatsappButton.addEventListener('click', handleRedirect);
+        whatsappButton.style.cursor = 'pointer';
+    }
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+            }
+        });
+    }
+
+});
