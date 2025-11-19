@@ -55,6 +55,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card-link');
+    const productCountElement = document.getElementById('productCount');
+    const discountCountElement = document.getElementById('discountCount');
+
+    function updateCounters() {
+        filterButtons.forEach(btn => {
+            const filterValue = btn.getAttribute('data-filter');
+            let count = 0;
+            
+            if (filterValue === 'all') {
+                count = productCards.length;
+            } else {
+                productCards.forEach(card => {
+                    if (card.getAttribute('data-category') === filterValue) {
+                        count++;
+                    }
+                });
+            }
+            
+            const countElement = btn.querySelector('.filter-count');
+            if (countElement) {
+                countElement.textContent = count;
+            }
+        });
+        
+        const visibleProducts = Array.from(productCards).filter(card => 
+            card.style.display !== 'none'
+        ).length;
+        
+        if (productCountElement) {
+            productCountElement.textContent = visibleProducts;
+        }
+    }
+
+    updateCounters();
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -78,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+            
+            updateCounters();
         });
     });
 
@@ -214,6 +250,240 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
         });
     });
+
+    // Efectos 3D para tarjetas del carrusel
+    const carouselCards = document.querySelectorAll('.product-card');
+    
+    carouselCards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
+            
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-20px) scale(1.05)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+        });
+    });
+
+    // Animación de entrada para productos al hacer scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const productObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                productObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const allProducts = document.querySelectorAll('.product-item-simple, .product-card');
+    allProducts.forEach(product => {
+        product.style.opacity = '0';
+        product.style.transform = 'translateY(30px)';
+        product.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        productObserver.observe(product);
+    });
+
+    const timerUnits = document.querySelectorAll('.timer-unit');
+    timerUnits.forEach(unit => {
+        unit.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.05) rotateZ(2deg)';
+        });
+        unit.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1) rotateZ(0)';
+        });
+    });
+
+    const productsSection = document.querySelector('.products-section-simple');
+    const carouselSection = document.querySelector('.product-carousel-section');
+    
+    let scrollTimeout;
+    
+    let scrollTimeout;
+    let lastScrollTime = 0;
+    const scrollThrottle = 100;
+    
+    window.addEventListener('scroll', function() {
+        const now = Date.now();
+        if (now - lastScrollTime < scrollThrottle) return;
+        lastScrollTime = now;
+        
+        const scrolled = window.pageYOffset;
+        
+        if (productsSection) {
+            const productsSectionTop = productsSection.offsetTop;
+            const productsSectionHeight = productsSection.offsetHeight;
+            const relativeScroll = scrolled - productsSectionTop;
+            
+            if (relativeScroll > -productsSectionHeight && relativeScroll < productsSectionHeight) {
+                const movement = (relativeScroll / productsSectionHeight) * 100;
+                productsSection.style.setProperty('--scroll-products', `${movement}px`);
+            }
+        }
+        
+        if (carouselSection) {
+            const carouselSectionTop = carouselSection.offsetTop;
+            const carouselSectionHeight = carouselSection.offsetHeight;
+            const relativeScroll = scrolled - carouselSectionTop;
+            
+            if (relativeScroll > -carouselSectionHeight && relativeScroll < carouselSectionHeight) {
+                const movement = (relativeScroll / carouselSectionHeight) * 100;
+                carouselSection.style.setProperty('--scroll-carousel', `${movement}px`);
+            }
+        }
+    }, { passive: true });
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let lastMouseTime = 0;
+    const mouseThrottle = 50;
+    
+    document.addEventListener('mousemove', function(e) {
+        const now = Date.now();
+        if (now - lastMouseTime < mouseThrottle) return;
+        lastMouseTime = now;
+        
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }, { passive: true });
+    
+    let animationFrameId;
+    let lastAnimationTime = 0;
+    const animationThrottle = 32;
+    
+    function animateSectionBackgrounds(timestamp) {
+        if (timestamp - lastAnimationTime < animationThrottle) {
+            animationFrameId = requestAnimationFrame(animateSectionBackgrounds);
+            return;
+        }
+        lastAnimationTime = timestamp;
+        
+        if (productsSection) {
+            const rect = productsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const relativeX = ((mouseX - rect.left) / rect.width) * 100;
+                const relativeY = ((mouseY - rect.top) / rect.height) * 100;
+                
+                productsSection.style.setProperty('--mouse-x', `${relativeX}%`);
+                productsSection.style.setProperty('--mouse-y', `${relativeY}%`);
+            }
+        }
+        
+        if (carouselSection) {
+            const rect = carouselSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const relativeX = ((mouseX - rect.left) / rect.width) * 100;
+                const relativeY = ((mouseY - rect.top) / rect.height) * 100;
+                
+                carouselSection.style.setProperty('--mouse-x', `${relativeX}%`);
+                carouselSection.style.setProperty('--mouse-y', `${relativeY}%`);
+            }
+        }
+        
+        animationFrameId = requestAnimationFrame(animateSectionBackgrounds);
+    }
+    
+    animationFrameId = requestAnimationFrame(animateSectionBackgrounds);
+    
+    const observerSections = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-active');
+            } else {
+                entry.target.classList.remove('section-active');
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+    
+    if (productsSection) observerSections.observe(productsSection);
+    if (carouselSection) observerSections.observe(carouselSection);
+    
+    function createParticleTrail(section, x, y) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.width = '4px';
+        particle.style.height = '4px';
+        particle.style.borderRadius = '50%';
+        particle.style.background = `rgba(${Math.random() > 0.5 ? '255, 0, 0' : '147, 43, 52'}, 0.8)`;
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '1';
+        particle.style.animation = 'particleFade 1s ease-out forwards';
+        
+        section.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 1000);
+    }
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes particleFade {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.3) translateY(-30px);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    let particleTimeout;
+    let lastParticleTime = 0;
+    const particleThrottle = 100;
+    
+    if (productsSection) {
+        productsSection.addEventListener('mousemove', function(e) {
+            const now = Date.now();
+            if (now - lastParticleTime < particleThrottle) return;
+            
+            if (Math.random() > 0.97) {
+                lastParticleTime = now;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                createParticleTrail(this, x, y);
+            }
+        }, { passive: true });
+    }
+    
+    if (carouselSection) {
+        carouselSection.addEventListener('mousemove', function(e) {
+            const now = Date.now();
+            if (now - lastParticleTime < particleThrottle) return;
+            
+            if (Math.random() > 0.97) {
+                lastParticleTime = now;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                createParticleTrail(this, x, y);
+            }
+        }, { passive: true });
+    }
 
     const productButtons = document.querySelectorAll('.product-btn');
     
