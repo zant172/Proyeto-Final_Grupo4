@@ -129,50 +129,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function startCountdown() {
-        const endDate = new Date();
-        endDate.setDate(endDate.getDate() + 3);
-        endDate.setHours(23, 59, 59, 999);
-
-        if (!localStorage.getItem('offerEndDate')) {
-            localStorage.setItem('offerEndDate', endDate.toISOString());
-        }
-
-        const storedEndDate = new Date(localStorage.getItem('offerEndDate'));
-
+    setTimeout(function() {
         const daysEl = document.getElementById('days');
         const hoursEl = document.getElementById('hours');
         const minutesEl = document.getElementById('minutes');
         const secondsEl = document.getElementById('seconds');
 
-        function updateTimer() {
-            const now = new Date().getTime();
-            const distance = storedEndDate - now;
-
-            if (distance < 0) {
-                const newEndDate = new Date();
-                newEndDate.setDate(newEndDate.getDate() + 3);
-                newEndDate.setHours(23, 59, 59, 999);
-                localStorage.setItem('offerEndDate', newEndDate.toISOString());
-                return;
+        if (daysEl && hoursEl && minutesEl && secondsEl) {
+            const now = new Date();
+            const endDate = new Date(now.getTime() + (3 * 24 * 60 * 60 * 1000));
+            
+            function updateCountdown() {
+                const currentTime = new Date().getTime();
+                const timeLeft = endDate - currentTime;
+                
+                if (timeLeft < 0) {
+                    daysEl.textContent = '00';
+                    hoursEl.textContent = '00';
+                    minutesEl.textContent = '00';
+                    secondsEl.textContent = '00';
+                    return;
+                }
+                
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minutesEl.textContent = String(minutes).padStart(2, '0');
+                secondsEl.textContent = String(seconds).padStart(2, '0');
             }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            daysEl.textContent = String(days).padStart(2, '0');
-            hoursEl.textContent = String(hours).padStart(2, '0');
-            minutesEl.textContent = String(minutes).padStart(2, '0');
-            secondsEl.textContent = String(seconds).padStart(2, '0');
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
-
-        updateTimer();
-        setInterval(updateTimer, 1000);
-    }
-
-    startCountdown();
+    }, 100);
 
     const favoriteButtons = document.querySelectorAll('.favorite-btn');
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -312,8 +305,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const productsSection = document.querySelector('.products-section-simple');
     const carouselSection = document.querySelector('.product-carousel-section');
-    
-    let scrollTimeout;
     
     let scrollTimeout;
     let lastScrollTime = 0;
@@ -540,9 +531,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-});
-document.addEventListener('DOMContentLoaded', () => {
 
     const tituloContacto = document.getElementById('titulo-contacto');
     const socialIcons = document.querySelectorAll('.custom-social-icon');
@@ -579,5 +567,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
+    
 });

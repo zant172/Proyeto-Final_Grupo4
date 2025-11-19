@@ -59,6 +59,7 @@ header img {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .nav-menu ul li a:hover,
